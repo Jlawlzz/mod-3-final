@@ -29,7 +29,6 @@ end
 
 group :test do
   gem "capybara"
-  gem 'webmock'
   gem 'database_cleaner'
   gem 'simplecov', require: false
   gem 'launchy'

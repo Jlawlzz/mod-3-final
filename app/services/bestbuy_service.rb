@@ -1,16 +1,18 @@
+require 'net/http'
+
 class BestbuyService
 
   def initialize
-    @connection = Faraday.new(url: "https://api.bestbuy.com/v1/products") do |faraday|
-      faraday.request  :url_encoded             # form-encode POST params
-      faraday.response :logger                  # log requests to STDOUT
+    @connection = Faraday.new(url: "https://api.bestbuy.com/v1") do |faraday|
+      faraday.request  :url_encoded
+      faraday.response :logger
       faraday.adapter  Faraday.default_adapter
     end
   end
 
   def search(param)
+    @connection.get("products(search=#{param})?format=json&show=sku,name,shortDescription,salePrice,image&apiKey=#{ENV['bestbuy_key']}")
     binding.pry
-    @connection.get("(search=#{param})?format=json&show=sku,name,salePrice&apiKey=#{ENV['bestbuy_key']}")
   end
 
 end

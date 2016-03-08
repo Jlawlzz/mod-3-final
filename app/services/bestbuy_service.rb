@@ -11,12 +11,7 @@ class BestbuyService
   end
 
   def search(param)
-    @connection.get("products(search=#{param})?format=json&show=sku,name,shortDescription,salePrice,image,reviews&apiKey=#{ENV['bestbuy_key']}")
-  end
-
-  def fetch_reviews(skus)
-    @connection.get("reviews(sku=3142553)?pageSize=2&format=json&show=rating&apiKey=#{ENV['bestbuy_key']}")
-
+    @connection.get("products(search=#{param})?format=json&show=sku,name,shortDescription,salePrice&apiKey=#{ENV['bestbuy_key']}")
   end
 
 end

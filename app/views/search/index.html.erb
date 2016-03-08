@@ -1,0 +1,8 @@
+
+<% @products.each do |product| %>
+<h1><%= product['name'] %></h1>
+<h2><%= product['sku'] %></h2>
+<h2><%= product['short_description'] %></h2>
+<h2><%= product['sale_price'] %></h2>
+<%= image_tag product['image_url'] %>
+<% end %>

@@ -6,12 +6,12 @@ class LookupProductsTest < ActionDispatch::IntegrationTest
     Capybara.app = Storedom::Application
   end
 
-  def test_it_reaches_the_root_page
+  def test_it_searches_for_product
     visit '/'
     fill_in 'Search', with: 'sennheiser'
     click_button "Search"
 
-    assert current_path, search_path
+    assert_equal current_path, search_path
   end
 
 end

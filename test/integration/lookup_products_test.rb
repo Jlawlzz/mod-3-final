@@ -8,7 +8,6 @@ class LookupProductsTest < ActionDispatch::IntegrationTest
 
   def test_it_reaches_the_root_page
     visit '/'
-    save_and_open_page
     fill_in 'Search', with: 'sennheiser'
     click_button "Search"
 

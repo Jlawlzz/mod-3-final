@@ -1,4 +1,4 @@
-class ItemsController < ApplicationController
+class Api::V1::ItemsController < ApplicationController
 
   respond_to :json
 
@@ -6,6 +6,7 @@ class ItemsController < ApplicationController
     @items = Item.all
 
     respond_with @items
+  end
 
   def show
     @item = Item.find(params[:id].to_i)

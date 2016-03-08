@@ -16,6 +16,7 @@ gem "minitest-rails"
 gem 'faraday'
 gem 'figaro'
 gem 'active_model_serializers', github: "rails-api/active_model_serializers"
+gem 'simple_form'
 
 group :development do
   gem "spring"

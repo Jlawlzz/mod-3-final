@@ -8,13 +8,11 @@ class LookupProductsTest < ActionDispatch::IntegrationTest
 
   def test_it_reaches_the_root_page
     visit '/'
-
-    fill_in 'Search for products', with: 'sennheiser'
+    save_and_open_page
+    fill_in 'Search', with: 'sennheiser'
     click_button "Search"
 
-    assert current_path, '/search'
-
-    save_and_open_page
+    assert current_path, search_path
   end
 
 end

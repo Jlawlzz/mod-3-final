@@ -1,7 +1,7 @@
 class SearchController < ApplicationController
 
   def index
-    
-    @orders = Order.all
+    @products = Services::BestBuyService.search(params[:product][:search])
+    binding.pry
   end
 end

@@ -1,3 +1,12 @@
+GIT
+  remote: git://github.com/rails-api/active_model_serializers.git
+  revision: 2acea0b0b2226940be1d229cb64cfd4f478c0da7
+  specs:
+    active_model_serializers (0.10.0.rc4)
+      actionpack (>= 4.0)
+      activemodel (>= 4.0)
+      railties (>= 4.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -46,8 +55,6 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     commonjs (0.2.7)
-    crack (0.4.3)
-      safe_yaml (~> 1.0.0)
     database_cleaner (1.5.1)
     docile (1.1.5)
     erubis (2.7.0)
@@ -66,7 +73,6 @@ GEM
       haml (>= 4.0.6, < 5.0)
       html2haml (>= 1.0.1)
       railties (>= 4.0.1)
-    hashdiff (0.3.0)
     hike (1.2.3)
     html2haml (2.0.0)
       erubis (~> 2.7.0)
@@ -145,7 +151,6 @@ GEM
     ref (2.0.0)
     ruby_parser (3.8.1)
       sexp_processor (~> 4.1)
-    safe_yaml (1.0.4)
     sass (3.2.19)
     sass-rails (4.0.5)
       railties (>= 4.0.0, < 5.0)
@@ -153,6 +158,9 @@ GEM
       sprockets (~> 2.8, < 3.0)
       sprockets-rails (~> 2.0)
     sexp_processor (4.7.0)
+    simple_form (3.2.1)
+      actionpack (> 4, < 5.1)
+      activemodel (> 4, < 5.1)
     simplecov (0.11.2)
       docile (~> 1.1.0)
       json (~> 1.8)
@@ -187,10 +195,6 @@ GEM
       execjs (>= 0.3.0)
       json (>= 1.8.0)
     vcr (3.0.1)
-    webmock (1.23.0)
-      addressable (>= 2.3.6)
-      crack (>= 0.3.2)
-      hashdiff
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -198,6 +202,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_model_serializers!
   capybara
   coffee-rails (~> 4.0.0)
   database_cleaner
@@ -214,6 +219,7 @@ DEPENDENCIES
   pry
   rails (= 4.1.4)
   sass-rails (~> 4.0.3)
+  simple_form
   simplecov
   spring
   sqlite3
@@ -221,7 +227,6 @@ DEPENDENCIES
   turbolinks
   uglifier (>= 1.3.0)
   vcr
-  webmock
 
 BUNDLED WITH
    1.11.2

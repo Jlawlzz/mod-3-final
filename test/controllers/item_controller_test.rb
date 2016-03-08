@@ -46,5 +46,21 @@ class Api::V1::ItemsControllerTest < ActionController::TestCase
 
   end
 
+  def test_delete
+    item = Item.create(name: "item_1", description: "thing_1", image_url: "1")
+
+    post :create, format: :json, item: {name: "thing_2",
+                                     description: "it does a thing",
+                                     image_url: "blah"}
+
+    answer = JSON.parse(response.body)
+    assert_response :success
+    assert_equal "thing_2", answer['name']
+    assert_equal "it does a thing", answer['description']
+    assert_equal "blah", answer['image_url']
+    assert_equal Item.all.count, 2
+
+  end
+
 
 end

@@ -8,6 +8,12 @@ class Api::V1::ItemsController < ApplicationController
     respond_with @items
   end
 
+  def create
+    @item = Item.create(item_params)
+
+    respond_with @item
+  end
+
   def show
     @item = Item.find(params[:id].to_i)
 
@@ -20,5 +26,13 @@ class Api::V1::ItemsController < ApplicationController
     @item.destroy
 
     respond_with @item
+  end
+
+  private
+
+  def item_params
+    params.require(:item).permit(:name,
+                                 :description,
+                                 :image_url)
   end
 end

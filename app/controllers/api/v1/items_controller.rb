@@ -13,4 +13,12 @@ class Api::V1::ItemsController < ApplicationController
 
     respond_with @item
   end
+
+  def destroy
+    @item = Item.destroy(params[:id])
+
+    @item.destroy
+
+    respond_with @item
+  end
 end
